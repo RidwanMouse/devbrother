@@ -40,10 +40,9 @@ loginForm.addEventListener("submit", (e) => {
         isLoggedIn = true;
         showAdminDashboard();
         closeLoginModal();
-        // Update login button to show logged in state
         loginBtn.innerHTML = '<i class="fas fa-user-circle mr-2"></i>Admin';
     } else {
-        alert("Email-ka ama password-ka waa khalad!");
+        alert("Invalid email or password!");
     }
 });
 
@@ -79,24 +78,57 @@ closeAdminDashboard.addEventListener("click", () => {
 
 function updateUsersTable() {
     const tbody = document.getElementById("usersTableBody");
+    const totalUsersElement = document.getElementById("totalUsers");
     tbody.innerHTML = "";
+    totalUsersElement.textContent = users.length;
 
     users.forEach((user) => {
         const tr = document.createElement("tr");
         tr.innerHTML = `
             <td class="px-6 py-4 whitespace-nowrap">
-                <div class="text-sm text-gray-500">${user.email}</div>
+                <div class="flex items-center">
+                    <div class="flex-shrink-0 h-10 w-10">
+                        <div class="h-10 w-10 rounded-full bg-gray-200 flex items-center justify-center">
+                            <i class="fas fa-user text-gray-500"></i>
+                        </div>
+                    </div>
+                    <div class="ml-4">
+                        <div class="text-sm font-medium text-gray-900">${user.email}</div>
+                        <div class="text-sm text-gray-500">${user.fullName || 'N/A'}</div>
+                    </div>
+                </div>
             </td>
             <td class="px-6 py-4 whitespace-nowrap">
-                <div class="text-sm text-gray-500">${new Date(
-                    user.dateRegistered
-                ).toLocaleDateString()}</div>
+                <div class="text-sm text-gray-500">
+                    ${new Date(user.dateRegistered).toLocaleDateString('en-US', {
+                        year: 'numeric',
+                        month: 'long',
+                        day: 'numeric'
+                    })}
+                </div>
             </td>
-            <td class="px-6 py-4 whitespace-nowrap text-right text-sm font-medium">
-                <button onclick="deleteUser(${
-                    user.id
-                })" class="text-rose-500 hover:text-rose-700">
-                    <i class="fas fa-trash"></i> Tir
+            <td class="px-6 py-4 whitespace-nowrap">
+                <span class="px-2 inline-flex text-xs leading-5 font-semibold rounded-full ${
+                    user.status === 'active' ? 'bg-green-100 text-green-800' : 'bg-red-100 text-red-800'
+                }">
+                    ${user.status || 'Active'}
+                </span>
+            </td>
+            <td class="px-6 py-4 whitespace-nowrap text-right text-sm font-medium space-x-2">
+                <button onclick="editUser(${user.id})" 
+                        class="text-blue-600 hover:text-blue-900 transition duration-300">
+                    <i class="fas fa-edit mr-1"></i>
+                    Edit
+                </button>
+                <button onclick="toggleUserStatus(${user.id})" 
+                        class="text-yellow-600 hover:text-yellow-900 transition duration-300">
+                    <i class="fas fa-toggle-on mr-1"></i>
+                    Toggle Status
+                </button>
+                <button onclick="deleteUser(${user.id})" 
+                        class="text-red-600 hover:text-red-900 transition duration-300">
+                    <i class="fas fa-trash mr-1"></i>
+                    Delete
                 </button>
             </td>
         `;
@@ -104,8 +136,27 @@ function updateUsersTable() {
     });
 }
 
+function editUser(userId) {
+    const user = users.find(u => u.id === userId);
+    if (user) {
+        const newName = prompt("Enter new name:", user.fullName);
+        const newEmail = prompt("Enter new email:", user.email);
+        if (newName && newEmail) {
+            updateUser(userId, { fullName: newName, email: newEmail });
+        }
+    }
+}
+
+function toggleUserStatus(userId) {
+    const user = users.find(u => u.id === userId);
+    if (user) {
+        const newStatus = user.status === 'active' ? 'inactive' : 'active';
+        updateUser(userId, { status: newStatus });
+    }
+}
+
 function deleteUser(userId) {
-    if (confirm("Ma hubtaa inaad tirto user-kan?")) {
+    if (confirm("Are you sure you want to delete this user?")) {
         users = users.filter((user) => user.id !== userId);
         localStorage.setItem("users", JSON.stringify(users));
         updateUsersTable();
@@ -147,8 +198,78 @@ const logoutBtn = document.getElementById("logoutBtn");
 logoutBtn.addEventListener("click", () => {
     isLoggedIn = false;
     adminDashboard.classList.add("hidden");
-    // Reset login button text
     loginBtn.innerHTML = '<i class="fas fa-user-circle mr-2"></i>Login';
-    // Show logout message
-    alert("Waad ka baxday account-ka!");
+    alert("You have been successfully logged out!");
+});
+
+// Add user management functions
+function addUser(userData) {
+    const newUser = {
+        id: Date.now(),
+        ...userData,
+        dateRegistered: new Date().toISOString(),
+        status: 'active'
+    };
+    users.push(newUser);
+    localStorage.setItem("users", JSON.stringify(users));
+    updateUsersTable();
+}
+
+function updateUser(userId, updatedData) {
+    users = users.map(user => 
+        user.id === userId ? { ...user, ...updatedData } : user
+    );
+    localStorage.setItem("users", JSON.stringify(users));
+    updateUsersTable();
+}
+
+// Add registration related variables
+const registerBtn = document.getElementById("registerBtn");
+const registerModal = document.getElementById("registerModal");
+const closeRegisterModal = document.getElementById("closeRegisterModal");
+const registerForm = document.getElementById("registerForm");
+
+// Add register button to navigation
+registerBtn.addEventListener("click", () => {
+    registerModal.classList.remove("hidden");
+    document.body.style.overflow = "hidden";
+});
+
+closeRegisterModal.addEventListener("click", () => {
+    registerModal.classList.add("hidden");
+    document.body.style.overflow = "auto";
+});
+
+// Handle registration form submission
+registerForm.addEventListener("submit", (e) => {
+    e.preventDefault();
+    const fullName = document.getElementById("regFullName").value;
+    const email = document.getElementById("regEmail").value;
+    const password = document.getElementById("regPassword").value;
+
+    // Check if email already exists
+    if (users.some(user => user.email === email)) {
+        alert("This email is already registered!");
+        return;
+    }
+
+    // Add new user
+    addUser({
+        fullName,
+        email,
+        password
+    });
+
+    alert("Registration successful!");
+    registerModal.classList.add("hidden");
+    document.body.style.overflow = "auto";
+    registerForm.reset();
+});
+
+// Close modal when clicking outside
+registerModal.addEventListener("click", (e) => {
+    if (e.target === registerModal) {
+        registerModal.classList.add("hidden");
+        document.body.style.overflow = "auto";
+    }
 }); 
