@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Website-kayga</title>
+    <title>welcome our website</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <!-- Add Font Awesome for better icons -->
     <link
@@ -24,7 +24,7 @@
 
       /* Decorative Flowers */
       .flower-decoration::before {
-        content: '🌸';
+        content: "🌸";
         position: absolute;
         font-size: 2.5rem;
         opacity: 0.8;
@@ -32,7 +32,7 @@
       }
 
       .flower-decoration::after {
-        content: '🌺';
+        content: "🌺";
         position: absolute;
         font-size: 2rem;
         opacity: 0.8;
@@ -40,8 +40,13 @@
       }
 
       @keyframes float {
-        0%, 100% { transform: translateY(0); }
-        50% { transform: translateY(-10px); }
+        0%,
+        100% {
+          transform: translateY(0);
+        }
+        50% {
+          transform: translateY(-10px);
+        }
       }
 
       .flower-left::before {
@@ -73,36 +78,60 @@
           <div class="flex items-center">
             <h1 class="text-2xl font-bold gradient-text">Logo</h1>
           </div>
-          
+
           <!-- Mobile menu button -->
           <div class="md:hidden">
-            <button id="mobileMenuBtn" class="text-gray-700 hover:text-blue-600 focus:outline-none">
+            <button
+              id="mobileMenuBtn"
+              class="text-gray-700 hover:text-blue-600 focus:outline-none"
+            >
               <i class="fas fa-bars text-2xl"></i>
             </button>
           </div>
 
           <!-- Desktop menu -->
           <div class="hidden md:flex items-center space-x-6">
-            <a href="#home" class="text-gray-700 hover:text-blue-600 transition duration-300">
-                <i class="fas fa-home mr-2 text-blue-600"></i>Home
+            <a
+              href="#home"
+              class="text-gray-700 hover:text-blue-600 transition duration-300"
+            >
+              <i class="fas fa-home mr-2 text-blue-600"></i>Home
             </a>
-            <a href="#about" class="text-gray-700 hover:text-purple-600 transition duration-300">
-                <i class="fas fa-info-circle mr-2 text-purple-600"></i>About
+            <a
+              href="#about"
+              class="text-gray-700 hover:text-purple-600 transition duration-300"
+            >
+              <i class="fas fa-info-circle mr-2 text-purple-600"></i>About
             </a>
-            <a href="#services" class="text-gray-700 hover:text-pink-600 transition duration-300">
-                <i class="fas fa-cogs mr-2 text-pink-600"></i>Services
+            <a
+              href="#services"
+              class="text-gray-700 hover:text-pink-600 transition duration-300"
+            >
+              <i class="fas fa-cogs mr-2 text-pink-600"></i>Services
             </a>
-            <a href="#testimonials" class="text-gray-700 hover:text-indigo-600 transition duration-300">
-                <i class="fas fa-star mr-2 text-indigo-600"></i>Testimonials
+            <a
+              href="#testimonials"
+              class="text-gray-700 hover:text-indigo-600 transition duration-300"
+            >
+              <i class="fas fa-star mr-2 text-indigo-600"></i>Testimonials
             </a>
-            <a href="#contact" class="text-gray-700 hover:text-green-600 transition duration-300">
-                <i class="fas fa-envelope mr-2 text-green-600"></i>Contact
+            <a
+              href="#contact"
+              class="text-gray-700 hover:text-green-600 transition duration-300"
+            >
+              <i class="fas fa-envelope mr-2 text-green-600"></i>Contact
             </a>
-            <button id="loginBtn" class="bg-gradient-to-r from-blue-600 to-purple-600 text-white px-6 py-3 rounded-lg hover:shadow-lg transition duration-300">
-                <i class="fas fa-user-circle mr-2"></i>Login
+            <button
+              id="loginBtn"
+              class="bg-gradient-to-r from-blue-600 to-purple-600 text-white px-6 py-3 rounded-lg hover:shadow-lg transition duration-300"
+            >
+              <i class="fas fa-user-circle mr-2"></i>Login
             </button>
-            <button id="registerBtn" class="bg-gradient-to-r from-green-600 to-teal-600 text-white px-6 py-3 rounded-lg hover:shadow-lg transition duration-300">
-                <i class="fas fa-user-plus mr-2"></i>Register
+            <button
+              id="registerBtn"
+              class="bg-gradient-to-r from-green-600 to-teal-600 text-white px-6 py-3 rounded-lg hover:shadow-lg transition duration-300"
+            >
+              <i class="fas fa-user-plus mr-2"></i>Register
             </button>
           </div>
         </div>
@@ -110,26 +139,47 @@
         <!-- Mobile menu (hidden by default) -->
         <div id="mobileMenu" class="hidden md:hidden">
           <div class="px-2 pt-2 pb-3 space-y-1 bg-white rounded-b-lg shadow-lg">
-            <a href="#home" class="block px-3 py-2 text-gray-700 hover:text-blue-600 transition duration-300">
-                <i class="fas fa-home mr-2 text-blue-600"></i>Home
+            <a
+              href="#home"
+              class="block px-3 py-2 text-gray-700 hover:text-blue-600 transition duration-300"
+            >
+              <i class="fas fa-home mr-2 text-blue-600"></i>Home
             </a>
-            <a href="#about" class="block px-3 py-2 text-gray-700 hover:text-purple-600 transition duration-300">
-                <i class="fas fa-info-circle mr-2 text-purple-600"></i>About
+            <a
+              href="#about"
+              class="block px-3 py-2 text-gray-700 hover:text-purple-600 transition duration-300"
+            >
+              <i class="fas fa-info-circle mr-2 text-purple-600"></i>About
             </a>
-            <a href="#services" class="block px-3 py-2 text-gray-700 hover:text-pink-600 transition duration-300">
-                <i class="fas fa-cogs mr-2 text-pink-600"></i>Services
+            <a
+              href="#services"
+              class="block px-3 py-2 text-gray-700 hover:text-pink-600 transition duration-300"
+            >
+              <i class="fas fa-cogs mr-2 text-pink-600"></i>Services
             </a>
-            <a href="#testimonials" class="block px-3 py-2 text-gray-700 hover:text-indigo-600 transition duration-300">
-                <i class="fas fa-star mr-2 text-indigo-600"></i>Testimonials
+            <a
+              href="#testimonials"
+              class="block px-3 py-2 text-gray-700 hover:text-indigo-600 transition duration-300"
+            >
+              <i class="fas fa-star mr-2 text-indigo-600"></i>Testimonials
             </a>
-            <a href="#contact" class="block px-3 py-2 text-gray-700 hover:text-green-600 transition duration-300">
-                <i class="fas fa-envelope mr-2 text-green-600"></i>Contact
+            <a
+              href="#contact"
+              class="block px-3 py-2 text-gray-700 hover:text-green-600 transition duration-300"
+            >
+              <i class="fas fa-envelope mr-2 text-green-600"></i>Contact
             </a>
-            <button id="mobileLoginBtn" class="w-full text-left px-3 py-2 bg-gradient-to-r from-blue-600 to-purple-600 text-white rounded-lg hover:shadow-lg transition duration-300">
-                <i class="fas fa-user-circle mr-2"></i>Login
+            <button
+              id="mobileLoginBtn"
+              class="w-full text-left px-3 py-2 bg-gradient-to-r from-blue-600 to-purple-600 text-white rounded-lg hover:shadow-lg transition duration-300"
+            >
+              <i class="fas fa-user-circle mr-2"></i>Login
             </button>
-            <button id="mobileRegisterBtn" class="w-full text-left px-3 py-2 bg-gradient-to-r from-green-600 to-teal-600 text-white rounded-lg hover:shadow-lg transition duration-300">
-                <i class="fas fa-user-plus mr-2"></i>Register
+            <button
+              id="mobileRegisterBtn"
+              class="w-full text-left px-3 py-2 bg-gradient-to-r from-green-600 to-teal-600 text-white rounded-lg hover:shadow-lg transition duration-300"
+            >
+              <i class="fas fa-user-plus mr-2"></i>Register
             </button>
           </div>
         </div>
@@ -141,7 +191,9 @@
       <div class="flower-decoration flower-left"></div>
       <div class="flower-decoration flower-right"></div>
       <div class="absolute inset-0 bg-[#1a1a1a]"></div>
-      <div class="absolute inset-0 bg-gradient-to-r from-gray-900/95 to-gray-800/95"></div>
+      <div
+        class="absolute inset-0 bg-gradient-to-r from-gray-900/95 to-gray-800/95"
+      ></div>
       <div class="relative max-w-7xl mx-auto px-4 text-center">
         <h2 class="text-5xl font-bold mb-6 text-white leading-tight">
           Welcome to <span class="text-blue-200">Our Website</span>
@@ -162,7 +214,9 @@
       <div class="flower-decoration flower-left"></div>
       <div class="flower-decoration flower-right"></div>
       <div class="max-w-7xl mx-auto px-4">
-        <h2 class="text-4xl font-bold text-center mb-16 text-purple-600">About Us</h2>
+        <h2 class="text-4xl font-bold text-center mb-16 text-purple-600">
+          About Us
+        </h2>
         <div class="grid md:grid-cols-2 gap-12 items-center">
           <div class="space-y-6">
             <div
@@ -204,33 +258,53 @@
       <div class="flower-decoration flower-left"></div>
       <div class="flower-decoration flower-right"></div>
       <div class="max-w-7xl mx-auto px-4">
-        <h2 class="text-4xl font-bold text-center mb-16 text-pink-600">Our Services</h2>
+        <h2 class="text-4xl font-bold text-center mb-16 text-pink-600">
+          Our Services
+        </h2>
         <div class="grid md:grid-cols-3 gap-8">
           <!-- Service 1 -->
-          <div class="bg-white p-6 rounded-lg shadow-lg hover:shadow-xl transition duration-300 group">
-            <div class="bg-blue-100 w-16 h-16 rounded-lg flex items-center justify-center mb-6 group-hover:bg-blue-200 transition">
+          <div
+            class="bg-white p-6 rounded-lg shadow-lg hover:shadow-xl transition duration-300 group"
+          >
+            <div
+              class="bg-blue-100 w-16 h-16 rounded-lg flex items-center justify-center mb-6 group-hover:bg-blue-200 transition"
+            >
               <i class="fas fa-code text-3xl text-blue-600"></i>
             </div>
             <h3 class="text-xl font-bold mb-4">Web Development</h3>
-            <p class="text-gray-600">Custom website development tailored to your needs.</p>
+            <p class="text-gray-600">
+              Custom website development tailored to your needs.
+            </p>
           </div>
-          
+
           <!-- Service 2 -->
-          <div class="bg-white p-6 rounded-lg shadow-lg hover:shadow-xl transition duration-300 group">
-            <div class="bg-purple-100 w-16 h-16 rounded-lg flex items-center justify-center mb-6 group-hover:bg-purple-200 transition">
+          <div
+            class="bg-white p-6 rounded-lg shadow-lg hover:shadow-xl transition duration-300 group"
+          >
+            <div
+              class="bg-purple-100 w-16 h-16 rounded-lg flex items-center justify-center mb-6 group-hover:bg-purple-200 transition"
+            >
               <i class="fas fa-mobile-alt text-3xl text-purple-600"></i>
             </div>
             <h3 class="text-xl font-bold mb-4">Mobile Apps</h3>
-            <p class="text-gray-600">Professional mobile application development.</p>
+            <p class="text-gray-600">
+              Professional mobile application development.
+            </p>
           </div>
-          
+
           <!-- Service 3 -->
-          <div class="bg-white p-6 rounded-lg shadow-lg hover:shadow-xl transition duration-300 group">
-            <div class="bg-pink-100 w-16 h-16 rounded-lg flex items-center justify-center mb-6 group-hover:bg-pink-200 transition">
+          <div
+            class="bg-white p-6 rounded-lg shadow-lg hover:shadow-xl transition duration-300 group"
+          >
+            <div
+              class="bg-pink-100 w-16 h-16 rounded-lg flex items-center justify-center mb-6 group-hover:bg-pink-200 transition"
+            >
               <i class="fas fa-paint-brush text-3xl text-pink-600"></i>
             </div>
             <h3 class="text-xl font-bold mb-4">UI/UX Design</h3>
-            <p class="text-gray-600">Beautiful and intuitive user interface design.</p>
+            <p class="text-gray-600">
+              Beautiful and intuitive user interface design.
+            </p>
           </div>
         </div>
       </div>
@@ -241,7 +315,9 @@
       <div class="flower-decoration flower-left"></div>
       <div class="flower-decoration flower-right"></div>
       <div class="max-w-7xl mx-auto px-4">
-        <h2 class="text-4xl font-bold text-center mb-16 text-indigo-600">What Our Clients Say</h2>
+        <h2 class="text-4xl font-bold text-center mb-16 text-indigo-600">
+          What Our Clients Say
+        </h2>
         <div class="grid md:grid-cols-3 gap-8">
           <div
             class="bg-white p-8 rounded-lg shadow-lg hover:shadow-xl transition duration-300 border border-gray-100"
@@ -320,29 +396,50 @@
       <div class="flower-decoration flower-left"></div>
       <div class="flower-decoration flower-right"></div>
       <div class="max-w-7xl mx-auto px-4">
-        <h2 class="text-4xl font-bold text-center mb-16 text-green-600">Contact Us</h2>
+        <h2 class="text-4xl font-bold text-center mb-16 text-green-600">
+          Contact Us
+        </h2>
         <div class="grid md:grid-cols-2 gap-12">
           <!-- Contact Form -->
           <div class="bg-white p-8 rounded-lg shadow-lg">
             <form class="space-y-6">
               <div>
                 <label class="block text-gray-700 mb-2 font-medium">Name</label>
-                <input type="text" class="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition" required>
+                <input
+                  type="text"
+                  class="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition"
+                  required
+                />
               </div>
               <div>
-                <label class="block text-gray-700 mb-2 font-medium">Email</label>
-                <input type="email" class="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition" required>
+                <label class="block text-gray-700 mb-2 font-medium"
+                  >Email</label
+                >
+                <input
+                  type="email"
+                  class="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition"
+                  required
+                />
               </div>
               <div>
-                <label class="block text-gray-700 mb-2 font-medium">Message</label>
-                <textarea rows="4" class="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition" required></textarea>
+                <label class="block text-gray-700 mb-2 font-medium"
+                  >Message</label
+                >
+                <textarea
+                  rows="4"
+                  class="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition"
+                  required
+                ></textarea>
               </div>
-              <button type="submit" class="w-full bg-gradient-to-r from-blue-600 to-purple-600 text-white py-3 rounded-lg font-medium hover:shadow-lg transition duration-300">
+              <button
+                type="submit"
+                class="w-full bg-gradient-to-r from-blue-600 to-purple-600 text-white py-3 rounded-lg font-medium hover:shadow-lg transition duration-300"
+              >
                 <i class="fas fa-paper-plane mr-2"></i>Send Message
               </button>
             </form>
           </div>
-          
+
           <!-- Contact Information -->
           <div class="bg-white p-8 rounded-lg shadow-lg">
             <div class="space-y-6">
@@ -352,7 +449,9 @@
                 </div>
                 <div>
                   <h3 class="font-bold text-lg mb-1">Address</h3>
-                  <p class="text-gray-600">123 Business Street, Suite 100, City, Country</p>
+                  <p class="text-gray-600">
+                    123 Business Street, Suite 100, City, Country
+                  </p>
                 </div>
               </div>
               <div class="flex items-start space-x-4">
@@ -427,142 +526,195 @@
     </div>
 
     <!-- Update Admin Dashboard -->
-    <div id="adminDashboard" class="hidden fixed inset-0 bg-black bg-opacity-50 z-50 flex items-center justify-center backdrop-blur-sm">
-        <div class="bg-white p-8 rounded-2xl max-w-6xl w-full m-4 transform transition-all">
-            <!-- Dashboard Header -->
-            <div class="flex justify-between items-center mb-8 pb-4 border-b border-gray-200">
-                <div class="flex items-center space-x-4">
-                    <div class="bg-gradient-to-r from-blue-600 to-purple-600 p-3 rounded-lg">
-                        <i class="fas fa-user-shield text-2xl text-white"></i>
-                    </div>
-                    <div>
-                        <h2 class="text-2xl font-bold gradient-text">Admin Dashboard</h2>
-                        <p class="text-gray-600">Manage your users and content</p>
-                    </div>
-                </div>
-                <div class="flex items-center space-x-4">
-                    <span class="bg-gray-100 px-4 py-2 rounded-lg text-gray-700">
-                        <i class="fas fa-user-circle mr-2 text-blue-600"></i>Admin
-                    </span>
-                    <button id="logoutBtn" class="bg-red-500 text-white px-4 py-2 rounded-lg hover:bg-red-600 transition duration-300 flex items-center">
-                        <i class="fas fa-sign-out-alt mr-2"></i>Logout
-                    </button>
-                    <button id="closeAdminDashboard" class="text-gray-500 hover:text-gray-700">
-                        <i class="fas fa-times text-xl"></i>
-                    </button>
-                </div>
+    <div
+      id="adminDashboard"
+      class="hidden fixed inset-0 bg-black bg-opacity-50 z-50 flex items-center justify-center backdrop-blur-sm"
+    >
+      <div
+        class="bg-white p-8 rounded-2xl max-w-6xl w-full m-4 transform transition-all"
+      >
+        <!-- Dashboard Header -->
+        <div
+          class="flex justify-between items-center mb-8 pb-4 border-b border-gray-200"
+        >
+          <div class="flex items-center space-x-4">
+            <div
+              class="bg-gradient-to-r from-blue-600 to-purple-600 p-3 rounded-lg"
+            >
+              <i class="fas fa-user-shield text-2xl text-white"></i>
             </div>
-
-            <!-- Dashboard Stats -->
-            <div class="grid grid-cols-3 gap-6 mb-8">
-                <div class="bg-gradient-to-r from-blue-500 to-blue-600 p-6 rounded-xl text-white">
-                    <div class="flex justify-between items-center">
-                        <div>
-                            <p class="text-white/80 text-sm">Total Users</p>
-                            <h3 class="text-3xl font-bold mt-1" id="totalUsers">0</h3>
-                        </div>
-                        <div class="bg-white/20 p-3 rounded-lg">
-                            <i class="fas fa-users text-2xl"></i>
-                        </div>
-                    </div>
-                </div>
-                <div class="bg-gradient-to-r from-purple-500 to-purple-600 p-6 rounded-xl text-white">
-                    <div class="flex justify-between items-center">
-                        <div>
-                            <p class="text-white/80 text-sm">Active Today</p>
-                            <h3 class="text-3xl font-bold mt-1">3</h3>
-                        </div>
-                        <div class="bg-white/20 p-3 rounded-lg">
-                            <i class="fas fa-chart-line text-2xl"></i>
-                        </div>
-                    </div>
-                </div>
-                <div class="bg-gradient-to-r from-pink-500 to-pink-600 p-6 rounded-xl text-white">
-                    <div class="flex justify-between items-center">
-                        <div>
-                            <p class="text-white/80 text-sm">New Messages</p>
-                            <h3 class="text-3xl font-bold mt-1">5</h3>
-                        </div>
-                        <div class="bg-white/20 p-3 rounded-lg">
-                            <i class="fas fa-envelope text-2xl"></i>
-                        </div>
-                    </div>
-                </div>
+            <div>
+              <h2 class="text-2xl font-bold gradient-text">Admin Dashboard</h2>
+              <p class="text-gray-600">Manage your users and content</p>
             </div>
-
-            <!-- Users Table -->
-            <div class="bg-white rounded-xl shadow-sm border border-gray-200">
-                <div class="p-4 border-b border-gray-200">
-                    <h3 class="text-lg font-semibold text-gray-800">User Management</h3>
-                    <p class="text-gray-600 text-sm">View and manage registered users</p>
-                </div>
-                <div class="overflow-x-auto">
-                    <table class="min-w-full divide-y divide-gray-200">
-                        <thead class="bg-gray-50">
-                            <tr>
-                                <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
-                                    Email
-                                </th>
-                                <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
-                                    Registration Date
-                                </th>
-                                <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
-                                    Status
-                                </th>
-                                <th class="px-6 py-3 text-right text-xs font-medium text-gray-500 uppercase tracking-wider">
-                                    Actions
-                                </th>
-                            </tr>
-                        </thead>
-                        <tbody id="usersTableBody" class="bg-white divide-y divide-gray-200">
-                            <!-- Users will be dynamically added here -->
-                        </tbody>
-                    </table>
-                </div>
-            </div>
+          </div>
+          <div class="flex items-center space-x-4">
+            <span class="bg-gray-100 px-4 py-2 rounded-lg text-gray-700">
+              <i class="fas fa-user-circle mr-2 text-blue-600"></i>Admin
+            </span>
+            <button
+              id="logoutBtn"
+              class="bg-red-500 text-white px-4 py-2 rounded-lg hover:bg-red-600 transition duration-300 flex items-center"
+            >
+              <i class="fas fa-sign-out-alt mr-2"></i>Logout
+            </button>
+            <button
+              id="closeAdminDashboard"
+              class="text-gray-500 hover:text-gray-700"
+            >
+              <i class="fas fa-times text-xl"></i>
+            </button>
+          </div>
         </div>
+
+        <!-- Dashboard Stats -->
+        <div class="grid grid-cols-3 gap-6 mb-8">
+          <div
+            class="bg-gradient-to-r from-blue-500 to-blue-600 p-6 rounded-xl text-white"
+          >
+            <div class="flex justify-between items-center">
+              <div>
+                <p class="text-white/80 text-sm">Total Users</p>
+                <h3 class="text-3xl font-bold mt-1" id="totalUsers">0</h3>
+              </div>
+              <div class="bg-white/20 p-3 rounded-lg">
+                <i class="fas fa-users text-2xl"></i>
+              </div>
+            </div>
+          </div>
+          <div
+            class="bg-gradient-to-r from-purple-500 to-purple-600 p-6 rounded-xl text-white"
+          >
+            <div class="flex justify-between items-center">
+              <div>
+                <p class="text-white/80 text-sm">Active Today</p>
+                <h3 class="text-3xl font-bold mt-1">3</h3>
+              </div>
+              <div class="bg-white/20 p-3 rounded-lg">
+                <i class="fas fa-chart-line text-2xl"></i>
+              </div>
+            </div>
+          </div>
+          <div
+            class="bg-gradient-to-r from-pink-500 to-pink-600 p-6 rounded-xl text-white"
+          >
+            <div class="flex justify-between items-center">
+              <div>
+                <p class="text-white/80 text-sm">New Messages</p>
+                <h3 class="text-3xl font-bold mt-1">5</h3>
+              </div>
+              <div class="bg-white/20 p-3 rounded-lg">
+                <i class="fas fa-envelope text-2xl"></i>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Users Table -->
+        <div class="bg-white rounded-xl shadow-sm border border-gray-200">
+          <div class="p-4 border-b border-gray-200">
+            <h3 class="text-lg font-semibold text-gray-800">User Management</h3>
+            <p class="text-gray-600 text-sm">
+              View and manage registered users
+            </p>
+          </div>
+          <div class="overflow-x-auto">
+            <table class="min-w-full divide-y divide-gray-200">
+              <thead class="bg-gray-50">
+                <tr>
+                  <th
+                    class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider"
+                  >
+                    Email
+                  </th>
+                  <th
+                    class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider"
+                  >
+                    Registration Date
+                  </th>
+                  <th
+                    class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider"
+                  >
+                    Status
+                  </th>
+                  <th
+                    class="px-6 py-3 text-right text-xs font-medium text-gray-500 uppercase tracking-wider"
+                  >
+                    Actions
+                  </th>
+                </tr>
+              </thead>
+              <tbody
+                id="usersTableBody"
+                class="bg-white divide-y divide-gray-200"
+              >
+                <!-- Users will be dynamically added here -->
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
     </div>
 
     <!-- Add Registration Modal -->
-    <div id="registerModal" class="hidden fixed inset-0 bg-black bg-opacity-50 z-50 flex items-center justify-center backdrop-blur-sm">
-        <div class="bg-white p-8 rounded-2xl max-w-md w-full m-4 transform transition-all">
-            <div class="flex justify-between items-center mb-6">
-                <h2 class="text-2xl font-bold gradient-text">Register Account</h2>
-                <button id="closeRegisterModal" class="text-gray-500 hover:text-gray-700">
-                    <i class="fas fa-times text-xl"></i>
-                </button>
-            </div>
-            <form id="registerForm" class="space-y-6">
-                <div>
-                    <label class="block text-gray-700 mb-2 font-medium">
-                        <i class="fas fa-user mr-2"></i>Full Name
-                    </label>
-                    <input type="text" id="regFullName" 
-                           class="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition" 
-                           required>
-                </div>
-                <div>
-                    <label class="block text-gray-700 mb-2 font-medium">
-                        <i class="fas fa-envelope mr-2"></i>Email
-                    </label>
-                    <input type="email" id="regEmail" 
-                           class="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition" 
-                           required>
-                </div>
-                <div>
-                    <label class="block text-gray-700 mb-2 font-medium">
-                        <i class="fas fa-lock mr-2"></i>Password
-                    </label>
-                    <input type="password" id="regPassword" 
-                           class="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition" 
-                           required>
-                </div>
-                <button type="submit" 
-                        class="w-full bg-gradient-to-r from-blue-600 to-purple-600 text-white py-3 rounded-lg font-medium hover:shadow-lg transition duration-300">
-                    <i class="fas fa-user-plus mr-2"></i>Register
-                </button>
-            </form>
+    <div
+      id="registerModal"
+      class="hidden fixed inset-0 bg-black bg-opacity-50 z-50 flex items-center justify-center backdrop-blur-sm"
+    >
+      <div
+        class="bg-white p-8 rounded-2xl max-w-md w-full m-4 transform transition-all"
+      >
+        <div class="flex justify-between items-center mb-6">
+          <h2 class="text-2xl font-bold gradient-text">Register Account</h2>
+          <button
+            id="closeRegisterModal"
+            class="text-gray-500 hover:text-gray-700"
+          >
+            <i class="fas fa-times text-xl"></i>
+          </button>
         </div>
+        <form id="registerForm" class="space-y-6">
+          <div>
+            <label class="block text-gray-700 mb-2 font-medium">
+              <i class="fas fa-user mr-2"></i>Full Name
+            </label>
+            <input
+              type="text"
+              id="regFullName"
+              class="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition"
+              required
+            />
+          </div>
+          <div>
+            <label class="block text-gray-700 mb-2 font-medium">
+              <i class="fas fa-envelope mr-2"></i>Email
+            </label>
+            <input
+              type="email"
+              id="regEmail"
+              class="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition"
+              required
+            />
+          </div>
+          <div>
+            <label class="block text-gray-700 mb-2 font-medium">
+              <i class="fas fa-lock mr-2"></i>Password
+            </label>
+            <input
+              type="password"
+              id="regPassword"
+              class="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition"
+              required
+            />
+          </div>
+          <button
+            type="submit"
+            class="w-full bg-gradient-to-r from-blue-600 to-purple-600 text-white py-3 rounded-lg font-medium hover:shadow-lg transition duration-300"
+          >
+            <i class="fas fa-user-plus mr-2"></i>Register
+          </button>
+        </form>
+      </div>
     </div>
 
     <!-- Footer -->
@@ -578,20 +730,40 @@
               </p>
               <div class="space-y-2">
                 <div class="flex flex-col space-y-2">
-                  <a href="tel:+251929141077" class="flex items-center hover:text-blue-400 transition group">
-                    <i class="fas fa-phone-alt mr-3 text-blue-500 group-hover:rotate-12 transition-transform"></i>
+                  <a
+                    href="tel:+251929141077"
+                    class="flex items-center hover:text-blue-400 transition group"
+                  >
+                    <i
+                      class="fas fa-phone-alt mr-3 text-blue-500 group-hover:rotate-12 transition-transform"
+                    ></i>
                     <span>+251 929 141 077</span>
                   </a>
-                  <a href="tel:+251915752251" class="flex items-center hover:text-blue-400 transition group">
-                    <i class="fas fa-phone-alt mr-3 text-blue-500 group-hover:rotate-12 transition-transform"></i>
+                  <a
+                    href="tel:+251915752251"
+                    class="flex items-center hover:text-blue-400 transition group"
+                  >
+                    <i
+                      class="fas fa-phone-alt mr-3 text-blue-500 group-hover:rotate-12 transition-transform"
+                    ></i>
                     <span>+251 915 752 251</span>
                   </a>
-                  <a href="tel:+251966288929" class="flex items-center hover:text-blue-400 transition group">
-                    <i class="fas fa-phone-alt mr-3 text-blue-500 group-hover:rotate-12 transition-transform"></i>
+                  <a
+                    href="tel:+251966288929"
+                    class="flex items-center hover:text-blue-400 transition group"
+                  >
+                    <i
+                      class="fas fa-phone-alt mr-3 text-blue-500 group-hover:rotate-12 transition-transform"
+                    ></i>
                     <span>+251 966 288 929</span>
                   </a>
-                  <a href="tel:+252906717544" class="flex items-center hover:text-blue-400 transition group">
-                    <i class="fas fa-phone-alt mr-3 text-blue-500 group-hover:rotate-12 transition-transform"></i>
+                  <a
+                    href="tel:+252906717544"
+                    class="flex items-center hover:text-blue-400 transition group"
+                  >
+                    <i
+                      class="fas fa-phone-alt mr-3 text-blue-500 group-hover:rotate-12 transition-transform"
+                    ></i>
                     <span>+252 906 717 544</span>
                   </a>
                 </div>
@@ -602,28 +774,46 @@
             <h3 class="text-2xl font-bold mb-6 gradient-text">Quick Links</h3>
             <ul class="space-y-4">
               <li>
-                <a href="#home" class="flex items-center hover:text-blue-500 transition">
+                <a
+                  href="#home"
+                  class="flex items-center hover:text-blue-500 transition"
+                >
                   <i class="fas fa-chevron-right mr-3 text-blue-500"></i>Home
                 </a>
               </li>
               <li>
-                <a href="#about" class="flex items-center hover:text-purple-500 transition">
+                <a
+                  href="#about"
+                  class="flex items-center hover:text-purple-500 transition"
+                >
                   <i class="fas fa-chevron-right mr-3 text-purple-500"></i>About
                 </a>
               </li>
               <li>
-                <a href="#services" class="flex items-center hover:text-pink-500 transition">
-                  <i class="fas fa-chevron-right mr-3 text-pink-500"></i>Services
+                <a
+                  href="#services"
+                  class="flex items-center hover:text-pink-500 transition"
+                >
+                  <i class="fas fa-chevron-right mr-3 text-pink-500"></i
+                  >Services
                 </a>
               </li>
               <li>
-                <a href="#testimonials" class="flex items-center hover:text-indigo-500 transition">
-                  <i class="fas fa-chevron-right mr-3 text-indigo-500"></i>Testimonials
+                <a
+                  href="#testimonials"
+                  class="flex items-center hover:text-indigo-500 transition"
+                >
+                  <i class="fas fa-chevron-right mr-3 text-indigo-500"></i
+                  >Testimonials
                 </a>
               </li>
               <li>
-                <a href="#contact" class="flex items-center hover:text-green-500 transition">
-                  <i class="fas fa-chevron-right mr-3 text-green-500"></i>Contact
+                <a
+                  href="#contact"
+                  class="flex items-center hover:text-green-500 transition"
+                >
+                  <i class="fas fa-chevron-right mr-3 text-green-500"></i
+                  >Contact
                 </a>
               </li>
             </ul>
