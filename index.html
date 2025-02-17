@@ -384,7 +384,7 @@
         class="bg-white p-8 rounded-2xl max-w-md w-full m-4 transform transition-all"
       >
         <div class="flex justify-between items-center mb-6">
-          <h2 class="text-2xl font-bold gradient-text">Soo Gal</h2>
+          <h2 class="text-2xl font-bold gradient-text">login</h2>
           <button id="closeModal" class="text-gray-500 hover:text-gray-700">
             <i class="fas fa-times text-xl"></i>
           </button>
@@ -416,7 +416,7 @@
             type="submit"
             class="w-full bg-gradient-to-r from-blue-600 to-purple-600 text-white py-3 rounded-lg font-medium hover:shadow-lg transition duration-300"
           >
-            <i class="fas fa-sign-in-alt mr-2"></i>Soo Gal
+            <i class="fas fa-sign-in-alt mr-2"></i>login
           </button>
         </form>
       </div>
@@ -432,12 +432,17 @@
       >
         <div class="flex justify-between items-center mb-6">
           <h2 class="text-2xl font-bold gradient-text">Admin Dashboard</h2>
-          <button
-            id="closeAdminDashboard"
-            class="text-gray-500 hover:text-gray-700"
-          >
-            <i class="fas fa-times text-xl"></i>
-          </button>
+          <div class="flex items-center space-x-4">
+            <span class="text-gray-600">
+              <i class="fas fa-user mr-2"></i>Admin
+            </span>
+            <button id="logoutBtn" class="bg-red-500 text-white px-4 py-2 rounded-lg hover:bg-red-600 transition duration-300">
+              <i class="fas fa-sign-out-alt mr-2"></i>Logout
+            </button>
+            <button id="closeAdminDashboard" class="text-gray-500 hover:text-gray-700">
+              <i class="fas fa-times text-xl"></i>
+            </button>
+          </div>
         </div>
 
         <!-- Users Table -->
@@ -579,9 +584,16 @@
       const ADMIN_EMAIL = "admin@example.com";
       const ADMIN_PASSWORD = "admin123";
 
+      // Add isLoggedIn state variable
+      let isLoggedIn = false;
+
       loginBtn.addEventListener("click", () => {
-        loginModal.classList.remove("hidden");
-        document.body.style.overflow = "hidden";
+        if (isLoggedIn) {
+          showAdminDashboard();
+        } else {
+          loginModal.classList.remove("hidden");
+          document.body.style.overflow = "hidden";
+        }
       });
 
       const closeLoginModal = () => {
@@ -591,14 +603,18 @@
 
       closeModal.addEventListener("click", closeLoginModal);
 
+      // Update the login form submit handler
       loginForm.addEventListener("submit", (e) => {
         e.preventDefault();
         const email = document.getElementById("email").value;
         const password = document.getElementById("password").value;
 
         if (email === ADMIN_EMAIL && password === ADMIN_PASSWORD) {
+          isLoggedIn = true;
           showAdminDashboard();
           closeLoginModal();
+          // Update login button to show logged in state
+          loginBtn.innerHTML = '<i class="fas fa-user-circle mr-2"></i>Admin';
         } else {
           alert("Email-ka ama password-ka waa khalad!");
         }
@@ -620,7 +636,12 @@
         });
       });
 
+      // Update showAdminDashboard function to check login state
       function showAdminDashboard() {
+        if (!isLoggedIn) {
+          loginModal.classList.remove("hidden");
+          return;
+        }
         adminDashboard.classList.remove("hidden");
         updateUsersTable();
       }
@@ -692,6 +713,17 @@
         link.addEventListener('click', () => {
           mobileMenu.classList.add('hidden');
         });
+      });
+
+      // Add logout button handler
+      const logoutBtn = document.getElementById("logoutBtn");
+      logoutBtn.addEventListener("click", () => {
+        isLoggedIn = false;
+        adminDashboard.classList.add("hidden");
+        // Reset login button text
+        loginBtn.innerHTML = '<i class="fas fa-user-circle mr-2"></i>Login';
+        // Show logout message
+        alert("Waad ka baxday account-ka!");
       });
     </script>
   </body>
